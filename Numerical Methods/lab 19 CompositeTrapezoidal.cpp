@@ -1,4 +1,4 @@
-//lab 18: WAP to integrate a given function using trapezoidal rule
+//lab 18: WAP to integrate a given function using composite trapezoidal rule
 #include<stdio.h>
 #include<conio.h>
 #include<math.h>
