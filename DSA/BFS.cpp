@@ -1,5 +1,4 @@
 #include <iostream>
-#include <queue>
 
 using namespace std;
 
@@ -15,19 +14,19 @@ void addEdge(int u, int v) {
 }
 
 void BFS(int start) {
-    queue<int> q;
-    q.push(start);
+    int front = 0, rear = 0;
+    int q[MAX];  
+    q[rear++] = start; 
     visited[start] = true;
     
-    while (!q.empty()) {
-        int node = q.front();
-        q.pop();
+    while (front < rear) {
+        int node = q[front++];  
         cout << node << " ";
         
         for (int i = 0; i < V; i++) {
             if (adj[node][i] == 1 && !visited[i]) {
                 visited[i] = true;
-                q.push(i);
+                q[rear++] = i;  
             }
         }
     }
@@ -62,4 +61,3 @@ int main() {
     
     return 0;
 }
-
